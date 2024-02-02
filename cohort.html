@@ -954,8 +954,13 @@
         }
 
         .py-6 {
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .py-10 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
         }
 
         .pb-10 {
@@ -1522,6 +1527,11 @@
                 line-height: 1
             }
 
+            .xl\:text-6xl {
+                font-size: 4rem;
+                line-height: 1
+            }
+
             .xl\:text-8xl {
                 font-size: 6rem;
                 line-height: 1
@@ -1552,22 +1562,84 @@
             }
         }
     </style>
+    <style>
+        .faq-content {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.panel-title {
+  font-size: 20px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 50px;
+  display: block;
+  cursor: pointer;
+}
+
+.panel-content {
+  /* font-size: 20px; */
+  padding: 0px 14px;
+  margin: 0 40px;
+  height: 0;
+  overflow: hidden;
+  /* z-index: -1; */
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.panel:checked ~ .panel-content{
+  height: auto;
+  opacity: 1;
+  padding: 14px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 2px;
+  z-index: 5;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
+}
+    </style>
     <link rel="stylesheet" href="">
 </head>
 
 <body>
-    <section class="w-full bg-green">
-        <a href="cohort.html" class="w-full ">
-            <div class="text-white text-center py-2 font-bold">
-                Join the Full Scale AI Product Development Cohort today! Limited seats available.
-            </div>
-        </a>
-    </section>
-
     <section class="overflow-hidden relative h-auto bg-black">
         <div class="lg:p-8 xl:max-w-7xl mx-auto">
-            <div style="background-image: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#63e 69.27%,#fff 100%);"
-                class="rounded-2xl lg:rounded-[3rem] overflow-hidden relative">
+            <div class="rounded-2xl lg:rounded-[3rem] overflow-hidden relative bg-black">
                 <div class="mx-auto relative w-full max-w-7xl z-20">
                     <div class="mx-auto relative w-full lg:px-24 flex flex-col md:flex-row md:items-center md:justify-between md:px-6 px-8 py-3"
                         x-data="{ open: false }">
@@ -1592,11 +1664,11 @@
                         </div>
                         <nav :class="{'flex': open, 'hidden': !open}"
                             class="items-center flex-col flex-grow hidden  md:flex md:flex-row md:justify-end md:pb-0">
-                            <a href="#features"
+                            <a href="index.html#features"
                                 class="text-white text-m py-2 hover:text-white/70 lg:px-4 md:px-3 px-2 ease-out duration-300 lg:ml-auto">Features</a>
-                            <a href="#journey"
+                            <a href="index.html#journey"
                                 class="text-white text-m py-2 hover:text-white/70 lg:px-4 md:px-3 px-2 ease-out duration-300">Journey</a>
-                            <a href="#learn"
+                            <a href="index.html#learn"
                                 class="text-white text-m py-2 hover:text-white/70 lg:px-4 md:px-3 px-2 ease-out duration-300">Learn</a>
                                 <a href="cohort.html"
                                 class="text-white text-m py-2 hover:text-white/70 lg:px-4 md:px-3 px-2 ease-out duration-300">Cohort</a>
@@ -1609,232 +1681,137 @@
                         </nav>
                     </div>
                 </div>
-                <div class="items-center relative w-full z-20 pt-40 pb-48 lg:px-24 max-w-7xl md:px-12 mx-auto px-5">
-                    <div
-                        class="items-center w-full relative col-span-8 gap-12 z-30 -translate-y-5 lg:inline-flex m-auto">
-                        <div class="max-w-full lg:text-left sm:text-center">
-                            <h1
-                                class="font-semibold pb-2 md:text-5xl xl:text-8xl xl:leading-none xl:tracking-tightest tracking-tight text-3xl inline-block bg-clip-text bg-gradient-to-r text-transparent from-gray-300 via-white to-gray-500">
-                                Build.Collaborate.Grow</h1>
-                            <p
-                                class="text-white font-light lg:text-xl tracking-tight lg:leading-7 opacity-90 max-w-xl sm:mx-auto lg:mx-0 mt-4 text-lg">
-                                DevHub: Empowering Web Developers, Fostering Collaboration, and Unleashing Boundless
-                                Potential in a Thriving Community-Led Learning Platform</p>
-                            <div class="items-center flex gap-3 flex-col mt-8 mb-8 sm:flex-row">
-                                <a href="https://discord.gg/X6pX2QVDF5" target="_blank"
-                                    class="items-center text-base font-medium justify-center focus:outline-none text-black inline-flex bg-white border-2 border-white duration-200 focus-visible:outline-white focus-visible:ring-white hover:bg-transparent hover:border-white lg:w-auto px-5 py-2.5 rounded-full text-center hover:text-white w-full">Get
-                                    Started for Free</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <img src="https://cdn.devdojo.com/images/february2023/header-svg.svg" class="h-96 absolute right-0 z-30 bottom-0 opacity-0 w-auto"> -->
-                    <div
-                        class="bg-gradient-to-r from-transparent via-trasnparent w-1/2 h-full opacity-20 right-0 to-black absolute bottom-0 z-20">
-                    </div>
-                    <img alt="hero"
-                        class="w-full absolute bottom-0 right-0 z-0 mx-auto translate-y-20 md:translate-y-56 scale-110 lg:-translate-x-10 drop-shadow-xl opacity-100 lg:ml-auto"
-                        src="https://cdn.devdojo.com/images/february2023/liquid-img.png">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="flex flex-col w-full bg-black md:flex-row">
-        <div class="flex flex-col items-center justify-center w-full p-10 md:w-1/2 lg:p-16 xl:p-24 2xl:bg-inherit">
-            <h2 class="max-w-lg text-4xl font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">🚀We
-                have the resources you need to succeed </h2>
-            <p class="max-w-lg mt-5 text-xl text-gray-500 md:text-base lg:text-xl">Our powerful community and
-                revolutionary learning platform are designed to help your career thrive. <a
-                    href="https://discord.gg/X6pX2QVDF5" target="_blank"
-                    class="flex items-center justify-start mt-8 text-lg font-medium tracking-wide text-purple-500 underline uppercase">Learn
-                    More <svg class="w-5 h-5 ml-1 transform -rotate-45" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg></a></p>
-
-        </div>
-
-        <div class="w-full md:w-1/2">
-            <img src="https://cdn.devdojo.com/images/november2020/tools-bg.jpeg?q=75&amp;auto=format"
-                class="inset-0 object-cover">
-        </div>
-    </section>
-    <section id="features" class="w-full px-8 py-12 md:py-16 bg-whitexl:px-0" x-data="{ section: 'design' }"
-        data-tails-scripts="//unpkg.com/alpinejs">
-        <div class="flex flex-col max-w-6xl px-3 mx-auto md:px-0 lg:px-8 xl:px-0 md:flex-row">
-            <div class="w-full pr-5 mb-6 space-y-1 md:mb-0 md:space-y-4 md:w-4/12 xl:pr-12">
-                <h2 @click="section='design'" class="pb-2 text-5xl font-extrabold cursor-pointer lg:text-6xl"
-                    :class="{ 'text-black' : section == 'design', 'text-gray-400 hover:text-gray-900' : section != 'design' }">
-                    Build</h2>
-                <h2 @click="section='launch'" class="py-2 text-5xl font-extrabold cursor-pointer lg:text-6xl"
-                    :class="{ 'text-black' : section == 'launch', 'text-gray-400 hover:text-gray-900' : section != 'launch' }">
-                    Share</h2>
-                <h2 @click="section='learn'" class="py-2 text-5xl font-extrabold cursor-pointer lg:text-6xl"
-                    :class="{ 'text-black' : section == 'learn', 'text-gray-400 hover:text-gray-900' : section != 'learn' }">
-                    Get Hired</h2>
-            </div>
-
-            <div class="relative w-full mt-6 overflow-hidden md:mt-1 md:w-9/12">
-                <div class="w-full space-y-6" x-show="section == 'design'"
-                    x-transition:enter="top-0 left-0 w-full h-full absolute transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 transform translate-y-full"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-out duration-300"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-full">
-                    <svg class="w-12 h-12 text-purple-700" data-primary="purple-700" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                        </path>
-                    </svg>
-                    <h3 class="text-2xl font-bold leading-7">Build the next great real-world app</h3>
-                    <p class=" font-normal leading-3 text-gray-700 text-lg">Starting every journey from the beginning is
-                        exciting. You can develop the next great idea that can change the way people work and make a
-                        real impact on the world.</p>
-                    <a href="https://discord.gg/X6pX2QVDF5" target="_blank"
-                        class="flex items-center justify-start mt-8 text-lg font-medium tracking-wide text-purple-700 underline uppercase">Learn
-                        More <svg class="w-5 h-5 ml-1 transform -rotate-45" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg></a>
-                </div>
-
-                <div class="space-y-6" x-show="section == 'launch'"
-                    x-transition:enter="top-0 left-0 w-full h-full absolute transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 transform translate-y-full"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-out duration-300"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-full">
-                    <svg class="w-12 h-12 text-purple-700 stroke-current" data-primary="purple-700"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <path d="M4 13a8 8 0 017 7 6 6 0 003-5 9 9 0 006-8 3 3 0 00-3-3 9 9 0 00-8 6 6 6 0 00-5 3" />
-                        <path d="M7 14a6 6 0 00-3 6 6 6 0 006-3" />
-                        <circle cx="15" cy="9" r="1" />
-                    </svg>
-                    <h3 class="text-2xl font-bold leading-7">Share with the skilled community</h3>
-                    <p class=" font-normal leading-3 text-gray-700 text-lg">The quicker you share, the quicker you can
-                        learn and grow from feedbacks from industry experts. </p>
-                    <a href="https://discord.gg/X6pX2QVDF5" target="_blank"
-                        class="flex items-center justify-start mt-8 text-lg font-medium tracking-wide text-purple-700 underline uppercase">Learn
-                        More <svg class="w-5 h-5 ml-1 transform -rotate-45" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg></a>
-                </div>
-
-                <div class="space-y-6" x-show="section == 'learn'"
-                    x-transition:enter="top-0 left-0 w-full h-full absolute transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 transform translate-y-full"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-out duration-300"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-full">
-                    <svg class="w-12 h-12 text-purple-700" data-primary="purple-700" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
-                        </path>
-                    </svg>
-                    <h3 class="text-2xl font-bold leading-7">Get hired by top startups and land freelance clients</h3>
-                    <p class=" font-normal leading-3 text-gray-700 text-lg">Build real-world projects, launch products,
-                        build valuable connections and land amazing internships and jobs!</p>
-                    <a href="https://discord.gg/X6pX2QVDF5" target="_blank"
-                        class="flex items-center justify-start mt-8 text-lg font-medium tracking-wide text-purple-700 underline uppercase">Learn
-                        More <svg class="w-5 h-5 ml-1 transform -rotate-45" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="journey" class="w-full px-8 bg-black" style="padding-top: 10rem; padding-bottom: 10rem;">
-        <div class="relative max-w-6xl  mx-auto xl:px-0">
-            <!-- <h2 class="font-bold text-white sm:text-7xl text-5xl ">💎We believe in transperancy</h2> -->
-
-            <div class=" flex flex-col gap-5 items-center lg:flex-row justify-between items-center">
-                <div class="flex flex-col">
-                    <div style="font-family: 'Caveat', cursive;" class="text-purple-500 text-5xl"> Join the journey
-                    </div>
-                    <img class="" src="pppointed.svg">
-                </div>
-
-
-
-                <iframe class="w-full h-96 md:w-2/3"
-                    src="https://miro.com/app/live-embed/uXjVMGrZcH0=/?moveToViewport=-1490,-367,3142,1696&embedId=585663025999"
-                    scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen
-                    frameborder="0"></iframe>
 
             </div>
         </div>
     </section>
-    <section id="partner" class="w-full px-3 pt-12 pb-32 bg-black text-center" style="padding-bottom: 7rem;">
-        <div class="relative max-w-6xl px-3 mx-auto xl:px-0 text-center">
-            <h2 class="text-4xl font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">🤝Collaborations</h2>
-            <!-- <h2 class="max-w-lg text-4xl font-bold leading-tight text-white text-center md:text-3xl lg:text-4xl xl:text-5xl">Partners</h2> -->
-            <!-- <div class="border border-gray-800" style="margin: 3rem 0"></div> -->
-            <div class=" flex flex-wrap gap-3  mt-12">
-                <div class="relative text-center rounded-md  md:w-4/12 m-auto  bg-white px-3 md:px-12 py-12"
-                    style="border-radius: 0.5rem;">
-                    <img width="200px" class="m-auto mb-6" src="partner-logo.png">
-                    <p class="text-xl font-normal text-gray-700">
-                        DevHub, a leading community-based learning platform for web development, and <a
-                            href="https://parentheses.co.in/" target="_blank"
-                            class="underline underline-offset-2 text-blue-500">Parentheses</a> , a service-based startup
-                        committed to delivering innovative solutions, have come together with a shared mission of
-                        empowering individuals and fostering growth in the digital landscape.
-
-                        This strategic partnership aims to revolutionize the way people learn web development, bridging
-                        the gap between beginner enthusiasts and industry-ready professionals.
-                </div>
-
-                <div class="relative text-center rounded-md  md:w-4/12 m-auto  bg-white px-3 md:px-12 py-12"
-                    style="border-radius: 0.5rem; ">
-                    <img width="60px" class="m-auto mb-6" src="stealth.jpeg">
-                    <p class="text-xl font-normal text-gray-700 ">
-
-
-                        
-
-
-                        Announcing a strategic collaboration between DevHub and an early-stage Stealth Startup for a <a class="underline underline-offset-2 text-blue-500"
-                        href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank">3-month</a> AI product development program. Join to gain hands-on experience, collaborate with peers, and receive mentorship. Limited spots available for Design UI/UX, Product Management, and Full-Stack roles. <a
-                        class="underline underline-offset-2 text-blue-500"
-                        href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank"><a
-                            class="underline underline-offset-2 text-blue-500"
-                            href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank">Secure your spot</a> today! <a class="underline underline-offset-2 text-blue-500" href="cohort.html">Learn more </a>
-                </div>
-
-            </div>
-        </div>
+    <section class="w-full bg-black px-8 text-center py-10">
+        <h1
+            class="font-semibold pb-2 md:text-5xl xl:text-6xl  xl:leading-none xl:tracking-tightest tracking-tight text-3xl inline-block bg-clip-text bg-gradient-to-r text-transparent from-gray-300 via-white to-gray-500">
+            Cohort: Full-Scale AI Product Development
+        </h1>
+        <p class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl">
+            Embark on an immersive Full Scale AI Product Development Capstone experience that goes beyond theoretical learning. We're seeking passionate fellows eager to translate their Full-Stack or Design or Product Management skills into real-world applications using cutting-edge technologies. This opportunity is tailor-made if you're adept at Next.js, Supabase, Tailwind CSS, Cloud Databases, and Chart JS implementations.
+        </p>
+        <p class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl">
+            We are excited to unveil an exclusive collaboration between DevHub and an early-stage Stealth Startup in the AI product development space! This presents a rare opportunity to gain immersive insight into the inner workings of a real startup and to actively participate in the development of real-world AI products. 
+Throughout our 3-month long program, you will acquire practical experience, collaborate with talented peers, take ownership of delivering solutions to real-world challenges, and receive valuable mentorship during the program. 
+Limited spots are available for Design UI/UX, Product Management, and Full-Stack roles, so secure your spot for this unique learning opportunity today. 
+        </p>
     </section>
-    <section id="learn" class="w-full px-8 py-12 bg-white">
+    <section  class="w-full px-8 py-12 bg-white">
         <div class="relative max-w-6xl px-3 mx-auto xl:px-0">
-            <h2 class="max-w-lg text-4xl font-bold leading-tight text-black md:text-3xl lg:text-4xl xl:text-5xl">
-                🛠️Building Greatness</h2>
-            <div class="border border-gray-500" style="margin: 3rem 0"></div>
+            
             <div class=" flex flex-col items-center lg:flex-row ">
                 <div class="relative w-full lg:w-2/3">
                     <p class="text-xl font-normal text-gray-700">We are on a mission to provide a breathtaking platform
                         to the devs.<br class="hidden md:block"> Allowing you to learn and craft your next great idea.
                     </p>
-                    <p class="mt-12 text-lg text-purple-500 uppercase" data-primary="purple-500">People do not decide
-                        greatness, they decide to do great things</p>
+                    <p class="mt-12 text-lg text-purple-500 uppercase" data-primary="purple-500">App clones are good for beginners, not for professionals</p>
                 </div>
                 <div class="flex items-center w-full h-full mt-16 lg:w-1/3 lg:mt-0">
-                    <a href="https://discord.gg/X6pX2QVDF5" target="_blank"
+                    <a href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank"
                         class="w-full md:w-1/2 px-6 py-3 text-base text-center text-white bg-purple-700 rounded-full "
-                        data-primary="purple-700" data-rounded="rounded-full">Get Started Today</a>
+                        data-primary="purple-700" data-rounded="rounded-full">Join Cohort Today</a>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="w-full bg-black px-8 py-10">
+        <h2 class="text-4xl  text-center font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">What to expect?</h2>
+        <div class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl flex flex-col gap-3">
+            <div>
+                👉🏽<b>Real-world Application Building:</b> Work on a dynamic project that mirrors the challenges and intricacies of professional software development.
+            </div>
+            <div>
+                👉🏽<b>Collaboration and Pairing:</b> Engage in an exciting remote collaboration that replicates the dynamics of industry projects. Pair with fellow participants to foster a collaborative learning environment.
+            </div>
+            <div>
+                👉🏽<b>Comprehensive Skill Application:</b> Apply your expertise in UI/UX Design, Frontend or Full-Stack, Product Management, Data Analysis to build a feature-rich, end-to-end application.
+            </div>
+
+        </div>
+    </section>
+    <section class="w-full bg-black text-center px-8 py-10">
+        <h2 class="text-4xl  text-center font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">Rewards</h2>
+        <div class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl flex flex-col gap-3">
+            In the fast-paced world of startups and leading tech companies, a LinkedIn recommendation and a genuine referral from industry leaders are golden tickets. Imagine having your skills and work ethic endorsed publicly on LinkedIn, boosting your professional credibility. On top of that, a direct recommendation from a trusted connection opens doors to exclusive opportunities. These authentic endorsements aren't just checkboxes—they're your secret weapons for standing out and propelling your career forward in the competitive tech landscape.
+
+
+        </div>
+    </section>
+    <section class="w-full bg-black px-8 py-10">
+        <h2 class="text-4xl  text-center font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">Program Structure</h2>
+        <div class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl flex flex-col gap-3">
+            <div>
+                👉🏽<b>Milestone-based Learning:</b> Progress through the program with well-defined milestones that ensure incremental learning and development.
+                
+            </div>
+            <div>
+                👉🏽<b>Time-Boxed Assignments:</b> Experience the fast-paced nature of real-world projects with time-boxed assignments, enhancing your ability to deliver quality solutions under constraints.
+            </div>
+        </div>
+    </section>
+    <section class="w-full bg-black text-center px-8 py-10">
+        <h2 class="text-4xl  text-center font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">Ideal Candidates</h2>
+        <div class="max-w-5xl mx-auto mt-5 text-xl text-gray-500 md:text-base lg:text-xl flex flex-col gap-3">
+            Are you comfortable in your knowledge area, be it Frontend, Backend, Design, Database, Full-Stack, or Product development? We're looking for individuals passionate about their craft and ready to contribute actively to a collaborative learning journey.
+
+
+
+        </div>
+    </section>
+    <section  class="w-full px-5 py-12 bg-white">
+        <h2 class="text-4xl  text-center font-bold leading-tight  md:text-3xl lg:text-4xl xl:text-5xl">FAQs</h2>
+        <div class="faq-content  mx-auto">
+            <div class="faq-question">
+              <input id="q1" type="checkbox" class="panel">
+              <div class="plus">+</div>
+              <label for="q1" class="panel-title">Will there be an Assessment?</label>
+              <div class="panel-content">There would be a short 30 min video call to assess your skills only if you're shortlisted after filling up the <a class="underline underline-offset-2 text-blue-500"
+                href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank"> registration form</a></div>
+            </div>
+            
+            <div class="faq-question">
+              <input id="q2" type="checkbox" class="panel">
+              <div class="plus">+</div>
+              <label for="q2" class="panel-title">How much is the fee to enroll into the cohort?</label>
+              <div class="panel-content">You will have to pay a one time fee of ₹2499 only after your final selection i.e. shortlist through the registration form and a short assessment.</div>
+            </div>
+            
+            <div class="faq-question">
+              <input id="q3" type="checkbox" class="panel">
+              <div class="plus">+</div>
+              <label for="q3" class="panel-title">How do you justify a fee of ₹2499?</label>
+              <div class="panel-content">
+                The ₹2499 fee for our 3-month cohort represents a strategic investment in your professional growth, backed by tangible value:<br/>
+                <div class="flex flex-col gap-5">
+                    <div>
+                        👉🏽<b>Hands-On Learning:</b> This isn't just a program; it's an immersive experience where you'll actively engage in real-world AI product development.
+                    </div>
+                    <div>
+                        👉🏽<b>Referrals from Industry Experts:</b> Our program connects you directly with industry leaders, creating a unique opportunity for mentorship and potential referrals.
+                    </div>
+                    <div>
+                        👉🏽<b>Limited Spots for Personalized Attention:</b> We prioritize a limited number of participants to ensure a quality learning environment.
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-question">
+                <input id="q4" type="checkbox" class="panel">
+                <div class="plus">+</div>
+                <label for="q4" class="panel-title">Who do I contact in case of doubts?</label>
+                <div class="panel-content">Feel free to email at <a class="underline underline-offset-2 text-blue-500" href="mailto:varun@devhub.co.in">varun@devhub.co.in</a> or you can always raise a query in the <a class="underline underline-offset-2 text-blue-500" href="https://discord.gg/X6pX2QVDF5" target="_blank">DevHub community</a> on Discord.</div>
+              </div>
+          </div>
+    </section>
+    <section class="w-full px-8 py-12 bg-white text-center">
+        <div class="flex items-center justify-center w-full mx-auto h-full mt-16 lg:w-1/3 lg:mt-0">
+            <a href="https://forms.gle/nfUJasFJpLQZnrqc8" target="_blank"
+                class="w-full md:w-1/2 px-6 py-3 text-base text-center text-white bg-purple-700 rounded-full "
+                data-primary="purple-700" data-rounded="rounded-full">Join Cohort Today</a>
         </div>
     </section>
     <div class="w-full px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 bg-black">
@@ -1858,12 +1835,6 @@
             <div class="px-5 py-2">
                 <a href="mailto:varun@devhub.co.in" class="text-base leading-6 text-gray-400 hover:text-gray-500">
                     Contact
-                </a>
-            </div>
-
-            <div class="px-5 py-2">
-                <a href="cohort.html" class="text-base leading-6 text-gray-400 hover:text-gray-500">
-                    Cohort
                 </a>
             </div>
             <!-- <div class="px-5 py-2">
@@ -1920,8 +1891,5 @@
             © 2024DevHub, Inc. All rights reserved.
         </p>
     </div>
-
     <script src="//unpkg.com/alpinejs" defer></script>
 </body>
-
-</html>
